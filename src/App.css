@@ -28,6 +28,12 @@
   color: #61dafb;
 }
 
+.Title {
+  font-stretch:semi-expanded;
+  color:darkgreen;
+  border: solid darkgreen;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
