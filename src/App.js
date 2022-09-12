@@ -1,18 +1,24 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Booklist from "./Booklist"
+import Header from "./Header"
+
 
 
 function App() {
   return (
+    
     <div className="App">
       <header className="App-header">
-        <a className="Title">
-          Book Previewer
-        </a>
+    
+        <Header />
+        </header>
+        {/* <a className="Title">
+          Alex's Google Books Previewer
+        </a> */}
         <Booklist />
-      </header>
     </div>
+  
   );
 }
 

@@ -13,17 +13,21 @@ const Graph = ({genreList}) => {
 
 const options = {
   title: "Genre Pie Chart",
+  is3D: true,
   
 };
 
   return (
+    <div>
     <Chart
+      
       chartType="PieChart"
       data={newGenreList}
       options={options}
       width={"100%"}
       height={"400px"}
     />
+    </div>
   );
 
 }

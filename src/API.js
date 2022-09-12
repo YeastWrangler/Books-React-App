@@ -14,7 +14,7 @@ if (authorQuery) {
     userFilter = "inauthor"
 }    
 
-    const myKey = 'AIzaSyCF_kEhUIPMbNvsa-dfzoUYy_XGoghyPLs'
+    //const myKey = 'AIzaSyCF_kEhUIPMbNvsa-dfzoUYy_XGoghyPLs'
     return fetch(`https://www.googleapis.com/books/v1/volumes?q=${userSearchQuery}+${userFilter}&filter=partial`)
     .then((response) => {
         return response.json()

@@ -1,17 +1,17 @@
 import { getBooks } from './API'
 import {useEffect, useState} from 'react'
-import { Chart } from "react-google-charts";
 import Graph from "./Graph"
 
 
-//<img> src={book.volumeInfo.imageLinks.smallThumbnail}</img>
 
 function Booklist () {
 
     const [booklist, setBooklist] = useState([])
     const [title, setTitle] = useState("")
     const [author, setAuthor] = useState("")
-    
+    // console.log(booklist.map((book) => {
+    //     return <img src={book.volumeInfo.previewLink} alt="book"/>
+    // }))
 
     const genreList = booklist.map((book) => {
     return book.volumeInfo.categories
@@ -23,18 +23,11 @@ useEffect(() => {
     })
 }, [title, author])
 
-const [clicked, setClicked] = useState(false);
-
-const handleClick = () => {
-    setClicked((currentClicked) => {
-        return !currentClicked
-    })
-}
 
 const handleTitleChange = (event) => {
     //console.log(event.target.value)
     setTitle(event.target.value)
-    console.log(title)
+    
 }
 
 const handleTitleSubmit = (event) => {
@@ -60,19 +53,22 @@ const handleAuthorSubmit = (event) => {
     })
 }
 
-return (<> 
-    <form onSubmit={handleTitleSubmit}>
-     <label htmlFor="title-search"> Search by Title Here:</label>
+return (<>
+    <div id="total">
+<div id="Books">
+    <form class="btn btn-light btn-xl" onSubmit={handleTitleSubmit}>
+     <label htmlFor="title-search"> Search by Title Here: </label>
      <input
         onChange={handleTitleChange}
         id="title-search"
         value={title}
         >
     </input>
+    <br></br>
 
     </form>
-    <form onSubmit={handleAuthorSubmit}>
-     <label htmlFor="author-search"> Search by Author Here:</label>
+    <form class="btn btn-light btn-xl" onSubmit={handleAuthorSubmit}>
+     <label htmlFor="author-search"> Search by Author Here: </label>
      <input
         onChange={handleAuthorChange}
         id="author-search"
@@ -81,17 +77,20 @@ return (<>
     </input>
 
     </form>
-        <div>{booklist.map((book) => {
+    </div>
+        <div id="booklist">{booklist.map((book) => {
     
         return (<div key={book.id}>
-        <p>Thumbnail: </p> <img src={book.volumeInfo.imageLinks.smallThumbnail} alt="book cover"/> 
-        <p>Title:{book.volumeInfo.title}</p>  <p>Author: {book.volumeInfo.authors} </p> <p>genre: {book.volumeInfo.categories} </p><button onClick={handleClick}> Click for Preview </button> 
+        <p>------------</p> <img src={book.volumeInfo.imageLinks.smallThumbnail} alt="book cover"/> 
+        <p>Title:{book.volumeInfo.title}</p>  <p>Author: {book.volumeInfo.authors} </p> <p>genre: {book.volumeInfo.categories} </p><a href={book.volumeInfo.previewLink}> Click for Preview </a> 
         </div>
         )
 })}
-         <Graph genreList={genreList}/>
         </div>
-</>)
+        </div>
+         <Graph genreList={genreList}/>
+        </>
+)
 }
 
 export default Booklist
