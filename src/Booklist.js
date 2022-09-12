@@ -64,7 +64,7 @@ return (<>
         value={title}
         >
     </input>
-    <br></br>
+    
 
     </form>
     <form class="btn btn-light btn-xl" onSubmit={handleAuthorSubmit}>
