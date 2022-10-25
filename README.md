@@ -1,8 +1,9 @@
 # My First React App utilizing a public API
 
-I built this simple react app to interact with the Google Books API. You can sort through several volumes of books with the provided search bars. At the bottom of the page is a cool graph that displays the different genres of books that are being shown on the current page.
+I built this simple react app to interact with the Google Books API. You can sort through several volumes of books with the provided search bars. At the bottom of the page is a cool graph that displays the different genres of books that are being shown on the current page. You can also click to see a preview of any book.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## You can visit the live site here: 
+https://splendorous-fudge-f4fc3d.netlify.app/
 
 ## Available Scripts
 
